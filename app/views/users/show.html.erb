@@ -1,2 +1,8 @@
 <h1><%= @user.name %>のページ</h1>
 <p>メールアドレス: <%= @user.email %></p>
+<h2>投稿一覧</h2>
+
+<% @user.feeds.each do |f| %>
+<%= image_tag f.image.url%>
+<%=f.comment %>
+<% end %>
