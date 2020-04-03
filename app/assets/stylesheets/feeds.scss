@@ -1,3 +1,51 @@
 // Place all the styles related to the feeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+header {
+    width: 100%;
+    background-color: #d1b074;
+    color: black;
+    height: 100px;
+    margin-top: 0;
+
+  }
+  header ul {
+    margin: 0 auto;
+    list-style: none;
+  }
+  header ul a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+  }
+  header li {
+    float: left;
+    width: auto;
+  }
+  header ul:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  footer {
+    width: 100%;
+    background-color: #d1b074;
+    padding: 20px 0 10px 0;
+    color: white;
+    margin: auto;
+    padding-bottom: 10px;
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+  }
+
+  body {
+    text-align: center;
+      margin: 0;
+   
+  }
+  #title {
+    margin-top: 0;
+ }

@@ -1,15 +1,17 @@
 <%= form_with(model: feed, local: true, url:choose_new_or_edit) do |form| %>
-  <div class="field">
-    <%= form.label :image %>
+<div class="container">
+<table class="table table-bordered">
+   <tr><%= form.label :image %></tr>
     <!-- 確認画面から新規作成画面に戻った時に、 -->
     <!-- アップロードした画像を表示させるための記述 -->
-    <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
-    <%= form.file_field :image %>
-    <%= form.hidden_field :image_cache %>
-    <%= form.label :comment %>
-    <%= form.text_field :comment %>
-  </div>
+    <tr><%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %></tr>
+    <tr><%= form.file_field :image %></tr>
+    <tr><%= form.hidden_field :image_cache %></tr>
+    <tr><%= form.label :comment %></tr>
+    <tr><%= form.text_field :comment %></tr>
+  </table>
   <div class="actions">
     <%= form.submit %>
   </div>
+    </div>
 <% end %>
