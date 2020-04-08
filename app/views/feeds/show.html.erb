@@ -1,14 +1,9 @@
-<p id="notice"><%= notice %></p>
 <div class="container">
-<p>
- <table class="table table-bordered">
+<p id="notice"><%= notice %></p>
+  <table class="table table-bordered">
   <tr><strong>Image:</strong></tr>
-  
   <td><%= image_tag @feed.image.url %></td>
+  <td><%=@feed.comment %></td>
+  <td><%=@feed.user.name %></td>
   </table>
-</p>
-
-<%= link_to 'Edit', edit_feed_path(@feed) %> |
-<%= link_to 'Back', user_path %>
-
 </div>

@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Sign up</h1>
 <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -9,14 +10,24 @@
     </ul>
   </div>
 <% end %>
-<%= form_with(model: @user, local: true) do |f| %>  
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit "Create my account" %>
+<table><%= form_with(model: @user, local: true) do |f| %>  
+  <tr>
+  <td><%= f.label :name %></td>
+  <td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+  <td><%= f.label :email %></td>
+  <td><%= f.email_field :email %></td>
+  </tr>
+  <tr>
+  <td><%= f.label :password %></td>
+  <td><%= f.password_field :password %></td>
+  </tr>
+  <tr>
+  <td><%= f.label :password_confirmation %></td>
+  <td><%= f.password_field :password_confirmation %></td>
+  </tr>
+  <td><%= f.submit "Create my account" %></td>
 <% end %>
+</table>
+</div>

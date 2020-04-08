@@ -1,23 +1,21 @@
 <div class="container">
-<h1 button class="btn btn-primary" disabled="disabled">
-<%= @user.name %>の投稿一覧</h1>
+<p id="notice"><%= notice %></p>
+
+
+<h1 button class="btn btn-primary"><%= @user.name %>の投稿一覧</h1>
 <table class="table">
 <table class="table table-bordered">
-<ul class="row">
-<% @user.feeds.each do |f| %>
-<tbody>
-<td><%= image_tag f.image.url%></td>
-
-<td><%=f.comment %></td>
-
-<td><button class="btn btn-default"><%= link_to 'Show', f %></button></td>
-
-<td><button class="btn btn-default"><%= link_to 'Edit', edit_feed_path(f) %></button></td>
-<td><button class="btn btn-default"><%= link_to 'Destroy', f, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+ <ul class="row">
+    <% @user.feeds.all.order(created_at: :desc).each do |feed| %>
+    <tbody>
+        <td><%=image_tag feed.image.url %></td>
+        <td><%=feed.comment %></td>
+        <td><button class="btn btn-default"><%= link_to 'Show', feed %></button></td>
+        <td><button class="btn btn-default"><%= link_to 'Edit', edit_feed_path(feed) %></button></td>
+        <td><button class="btn btn-default"><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
 <% end %>
-
 </tbody>
-
-</table>
-</table>
 </ul>
+</table>
+</table>
+</div>

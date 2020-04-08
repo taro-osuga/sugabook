@@ -4,7 +4,7 @@ class FeedsController < ApplicationController
   # GET /feeds
   # GET /feeds.json
   def index
-    @feeds = Feed.all
+    @feeds = Feed.all.order(created_at: :desc)
   end
 
   # GET /feeds/1
@@ -40,7 +40,7 @@ class FeedsController < ApplicationController
 
     respond_to do |format|
       if @feed.save
-        format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
+        format.html { redirect_to @feed, notice: '更新されました' }
         format.json { render :show, status: :created, location: @feed }
       else
         format.html { render :new }
@@ -68,7 +68,7 @@ class FeedsController < ApplicationController
   def destroy
     @feed.destroy
     respond_to do |format|
-      format.html { redirect_to feeds_url, notice: 'Feed was successfully destroyed.' }
+      format.html { redirect_to feeds_url }
       format.json { head :no_content }
     end
   end

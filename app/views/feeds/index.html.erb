@@ -1,24 +1,21 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container">
+<p id="notice"><%= notice %></p>
 <h1 button class="btn btn-primary" disabled="disabled">投稿一覧</h1>
 <table class="table">
 <table class="table table-bordered">
  <ul class="row">
     <% @feeds.each do |feed| %>
     <tbody>
-        <td><%= image_tag feed.image.url %></td>
+        <td><%=image_tag feed.image.url %></td>
         <td><%=feed.comment %></td>
         <td><%=feed.user.name %></td>
+        <td><button class="btn btn-default"><%= link_to 'Show', feed %></button></td>
+        
         <% end %>
     </tbody>
    </ul>
     </table>
     </table>
-  
 
-
-
-<br>
 
 </div>
