@@ -10,7 +10,8 @@
     </ul>
   </div>
 <% end %>
-<table><%= form_with(model: @user, local: true) do |f| %>  
+<%= form_with(model: @user, local: true) do |f| %>  
+<table>
   <tr>
   <td><%= f.label :name %></td>
   <td><%= f.text_field :name %></td>
@@ -27,7 +28,8 @@
   <td><%= f.label :password_confirmation %></td>
   <td><%= f.password_field :password_confirmation %></td>
   </tr>
+  </table>
   <td><%= f.submit "Create my account" %></td>
 <% end %>
-</table>
+
 </div>
