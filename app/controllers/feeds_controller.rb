@@ -68,7 +68,7 @@ class FeedsController < ApplicationController
   def destroy
     @feed.destroy
     respond_to do |format|
-      format.html { redirect_to feeds_url }
+      format.html { redirect_back(fallback_location: root_path) }
       format.json { head :no_content }
     end
   end
