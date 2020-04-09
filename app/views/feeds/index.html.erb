@@ -10,7 +10,8 @@
         <td><%=feed.comment %></td>
         <td><%=feed.user.name %></td>
         <td><button class="btn btn-default"><%= link_to 'Show', feed %></button></td>
-        
+        <td><button class="btn btn-default"><%= link_to 'Edit', edit_feed_path(feed) %></button></td>
+        <td><button class="btn btn-default"><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
         <% end %>
     </tbody>
    </ul>
